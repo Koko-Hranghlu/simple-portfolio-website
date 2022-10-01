@@ -124,7 +124,7 @@ header h1 {
 #project h3,
 #project p,
 #project a {
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
 }
 
 a.live {

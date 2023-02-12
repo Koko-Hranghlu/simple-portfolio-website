@@ -1,15 +1,25 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 /* universal resets and styles */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  font-family: 'Kalam', cursive;
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: "Kalam", sans-serif;
+}
+
+body {
+  line-height: 1.4;
+  margin: 0;
+  background: #f3f3f3;
+  color: #282341;
+  font-size: 18px;
 }
 
 a {
@@ -21,67 +31,63 @@ a {
   transition: all 0.3s ease;
 }
 
-header a,
-#project a.live,
-#contact a {
-  border: 2px solid #00c6ff;
-  padding: 5px 10px;
-}
-
-header a,
-#project h3,
-#contact a,
-#contact p,
-footer {
-  font-size: 1.8rem;
-}
-
-#about,
-#project,
-#contact,
-footer {
-  padding: 4rem 0;
-}
-
-#about h2,
-#project h2,
-#contact h2 {
-  margin-bottom: 3rem;
-  font-size: 2rem;
-}
-
-#about p,
-#project p,
-#project a {
-  font-size: 1.4rem;
-}
-
-#about p,
-#project p {
-  line-height: 1.6rem;
-  font-weight: 400;
-}
-
-#project img,
-#about img {
-  border-radius: 4px;
+img {
   width: 100%;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+header nav {
+  background:rgb(34,34,34, 0.2);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+header .name {
+  color: #00C1AD;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+header a.more-btn,
+#project a.live {
+  border: 2px solid #00C1AD;
+  padding: 8px 12px;
+}
+
+header a.more-btn:hover,
+#project a.live:hover {
+  background: #00C1AD;
+  color: white;
+}
+
+section h2 {
+  font-size: 2rem;
 }
 
 /*utility classes*/
 .uni-width {
-  width: min(87%, 700px);
+  width: min(90vw, 868px);
   margin: auto;
 }
 
+.ptb-4 {
+  padding: 4rem 0;
+}
+
 .pri-color {
-  color: #00c6ff;
+  color: #00C1AD;
 }
 
 .dark-bg {
-  background: #333;
-  color: white;
+  background: linear-gradient(to bottom right, #01AAAF, #00C1AD);
+  color: #ededed;
 }
 
 .center-items {
@@ -101,30 +107,62 @@ header {
 header h1 {
   font-size: 2.5rem;
   line-height: 1.5;
-  margin-bottom: 1.5rem;
 }
 
 /* about section */
+#about img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+#about .languages i {
+  font-size: 2rem;
+}
+
 .grid-cont {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   align-items: center;
 }
 
-.text-cont p:not(:last-child) {
-  margin-bottom: 12px;
-}
-
 /* project section */
-#project article:not(:last-child) {
-  margin-bottom: 7rem;
+#project .projects {
+  display: grid;
+  gap: 3rem 1.5rem;
 }
 
-#project h3,
-#project p,
-#project a {
-  margin: 1.5rem 0;
+.projects h3 {
+  margin: 0 0 1.5rem 0;
+}
+
+.projects img {
+  border: 3px solid rgb(243,243,243, 1);
+}
+
+.tech-stack {
+  font-weight: bold;
+}
+
+.projects article {
+  border-raius: 5px;
+  padding: 1rem;
+  background: white;
+}
+
+#project article .html {
+  color: #6BBECE;
+}
+#project article .css {
+  color: #3D53A1;
+}
+#project article .js {
+  color: #CE638F;
+}
+
+.api {
+  color: #99d700;
 }
 
 a.live {
@@ -138,13 +176,13 @@ a.source:hover {
 /* contact section */
 #contact a {
   width: min(70%, 300px);
+  border: 2px solid white;
+  padding: 10px 5px;
 }
 
-#contact a:hover,
-a.live:hover,
-header a:hover {
-  background: #00c6ff;
-  color: white;
+#contact a:hover {
+  background: white;
+  color: #00C1AD;
 }
 
 .contact-info {
@@ -152,26 +190,38 @@ header a:hover {
 }
 
 /* footer */
-footer > div,
-footer a {
-  gap: 2.5rem;
-  color: #333;
+
+footer {
+  background: #222;
 }
 
-footer > div > div {
+footer > div {
+  gap: 2.5rem;
+}
+
+footer a {
+  color: white;
+}
+
+.footer-links  {
   display: flex;
-  width: 30%;
-  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  font-size: 1.5rem;
 }
 
 /* mobile site */
 @media (max-width: 600px) {
-  .grid-cont {
-    grid-template-columns: 1fr;
-  }
-
   header div,
-#about .text-cont {
+  #about .text-cont {
     text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  #project .projects {
+    grid-template-columns: 1fr 1fr;
   }
 }
